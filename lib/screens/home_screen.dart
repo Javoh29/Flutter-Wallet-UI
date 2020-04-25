@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterui/widgets/circular_clipper.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -199,10 +200,170 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 ],
               ),
             ),
-            Stack(
-              children: <Widget>[
-                
-              ],
+            Padding(
+              padding: EdgeInsets.only(left: 20, top: 10,),
+              child: Stack(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 23, left: 5),
+                        child: ClipShadowPath(
+                          clipper: CircularClipper(),
+                          shadow: Shadow(blurRadius: 5, color: Colors.grey[100]),
+                          child: Container(
+                            height: 120,
+                            width: 290,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(8), bottomLeft: Radius.circular(8)),
+                              color: Colors.white,
+                            ),
+                            child: Column(
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.only(right: 30, top: 5),
+                                  child: Align(
+                                    alignment: Alignment.topRight,
+                                    child: Text(
+                                      'Flight Info',
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Colors.grey[400],
+                                        fontFamily: 'Montserrat'
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 40, top: 15),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Text(
+                                        '16:30',
+                                        style: TextStyle(
+                                          color: Theme.of(context).indicatorColor,
+                                          fontSize: 19,
+                                          fontFamily: 'Montserrat',
+                                          fontWeight: FontWeight.w600
+                                        ),
+                                      ),
+                                      Text(
+                                        '2 h 10 m',
+                                        style: TextStyle(
+                                            color: Colors.grey[400],
+                                            fontSize: 11,
+                                            fontFamily: 'Montserrat',
+                                        ),
+                                      ),
+                                      Text(
+                                        '19:15',
+                                        style: TextStyle(
+                                            color: Theme.of(context).indicatorColor,
+                                            fontSize: 19,
+                                            fontFamily: 'Montserrat',
+                                            fontWeight: FontWeight.w600
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(right: 20),
+                                  child: SizedBox(
+                                    height: 25,
+                                    width: 25,
+                                    child: Image(
+                                      image: AssetImage('assets/images/plane_yellow.png'),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 35),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Text(
+                                        'HWI',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 16,
+                                            fontFamily: 'Montserrat',
+                                            fontWeight: FontWeight.w600
+                                        ),
+                                      ),
+                                      Text(
+                                        'Non-Stop',
+                                        style: TextStyle(
+                                          color: Colors.grey[400],
+                                          fontSize: 11,
+                                          fontFamily: 'Montserrat',
+                                        ),
+                                      ),
+                                      Text(
+                                        'HWI',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 16,
+                                            fontFamily: 'Montserrat',
+                                            fontWeight: FontWeight.w600
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 35),
+                        transform: Matrix4.translationValues(-15.0, 0.0, 0.0),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              '405,95',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 19,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600
+                              ),
+                            ),
+                            Text(
+                              'EUR',
+                              style: TextStyle(
+                                  color: Theme.of(context).indicatorColor,
+                                  fontSize: 12,
+                                  fontFamily: 'Montserrat',
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    height: 45,
+                    width: 45,
+                    margin: EdgeInsets.only(left: 25),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 10
+                        )
+                      ]
+                    ),
+                    child: Image(
+                      image: AssetImage('assets/images/img_1.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
