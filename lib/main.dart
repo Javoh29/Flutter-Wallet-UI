@@ -10,9 +10,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFFFFD900),
-        accentColor: Color(0xFFFAFAFA),
-        indicatorColor: Color(0xFF4D0099)
+        primaryColor: Color(0xFFEAEAEA),
+        accentColor: Color(0xFF203A43),
       ),
       home: HomeScreen(),
     );
